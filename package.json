@@ -1,0 +1,16 @@
+{
+  "name": "e-commmerce_apollo_graphql_api_example",
+  "version": "1.0.0",
+  "description": "example of apollo graphql  appraoch",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.10.1",
+    "graphql": "^16.6.0"
+  }
+}
