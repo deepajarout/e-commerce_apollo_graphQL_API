@@ -16,8 +16,8 @@ exports.Query = {
   contact: () => {
     return ["sms", "email", "phone", "DM"];
   },
-  products: (parent, { filter }, { products }) => {
-    let filterData = products;
+  products: (parent, { filter }, { db }) => {
+    let filterData = db.products;
     if (filter) {
       if (filter.onSale && filter.onSale == true) {
         return filterData.filter((product) => product.onSale == filter.onSale);
@@ -27,16 +27,16 @@ exports.Query = {
       return filterData;
     }
   },
-  product: (parent, args, { products }) => {
+  product: (parent, args, { db }) => {
     if (args) {
-      return products.find((product) => product.id == args.id);
+      return db.products.find((product) => product.id == args.id);
     }
   },
-  categories: (parent, args, { categories }) => { 
-    return categories;
+  categories: (parent, args, { db }) => { 
+    return db.categories;
   },
-  category: (parent, args, { categories }) => {
+  category: (parent, args, { db }) => {
     //(parent, args,context)
-    return categories.find((product) => product.id == args.id);
+    return db.categories.find((product) => product.id == args.id);
   },
 };
